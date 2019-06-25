@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-    before_action :set_article, only: [:show, :destroy]
+    before_action :set_article, only: [:show, :destroy, :edit, :update]
 
     def new
       @article=Article.new
@@ -27,8 +27,24 @@ class ArticlesController < ApplicationController
     end
 
     def destroy
-        @article.destroy
-        redirect_to articles_url
+        if @article.destroy
+            flash[:success]="Article is successfully deleted"
+            redirect_to articles_url
+        end
+    end
+
+    def edit
+        
+    end
+
+    def update
+        
+        if @article.update(article_params)
+            flash[:success]="Article is successfully updated"
+            redirect_to articles_url       
+        else
+            redirect_to :back
+        end
     end
 
 

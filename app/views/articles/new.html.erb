@@ -1,3 +1,5 @@
+<h1>CREATE ARTICLE</h1>
+
 <%= form_for(:article, :html => {class: "form-horizontal", role: "form"},url: articles_url) do |f| %>
     <div class="form-group">
        <div class="control-label col-sm-2">
@@ -5,14 +7,14 @@
        </div><br>
        <div class="col-sm-8">
          <%= f.text_field :name , class: "form-control", placeholder: "Enter Name", autofocus: true%>
-       </div>
+       </div><br>
 
        <%= f.label :Description %>
        </div><br>
        <div class="col-sm-8">
          <%= f.text_area :description, class: "form-control", placeholder: "Enter Description", autofocus: true%>
        </div>
-   </div>
+   </div><br>
 
    <div class="form-group">
      <div class="col-sm-offset-2 col-sm-10">

@@ -1,0 +1,25 @@
+<h1>EDIT ARTICLE</h1>
+<%= form_for(@article) do |f| %>
+    <div class="form-group">
+       <div class="control-label col-sm-2">
+       <%= f.label :Name %>
+       </div><br>
+       <div class="col-sm-8">
+         <%= f.text_field :name , class: "form-control", placeholder: "Enter Name", autofocus: true%>
+       </div><br>
+
+       <%= f.label :Description %>
+       </div><br>
+       <div class="col-sm-8">
+         <%= f.text_area :description, class: "form-control", placeholder: "Enter Description", autofocus: true%>
+       </div>
+   </div><br>
+
+   <div class="form-group">
+     <div class="col-sm-offset-2 col-sm-10">
+       <%= f.submit 'Update Article', class:'btn btn-primary btn-lg'  %>
+     </div>
+   </div>
+ <% end %>
+
+ <center><%= link_to 'Back' , articles_url%></center>
