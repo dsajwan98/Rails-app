@@ -5,5 +5,6 @@ Rails.application.routes.draw do
    get '/login' ,to:'home#login'
    get '/contact', to:'home#contact'
    post '/auth', to:'home#auth'
+   resources :articles
 
 end

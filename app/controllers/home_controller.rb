@@ -21,13 +21,16 @@ class HomeController < ApplicationController
         @password_db="abc123" 
         if (@email==@email_db) && (@password==@password_db)
            flash[:success]="Logged IN"
-           redirect_to '/home'
-           
+           redirect_to '/articles/new'         
         else
             flash[:danger]="Wrong credentials"
             render :action => :login
         end
         
+    end
+
+    def logout
+        redirect_to '/login'
     end
 
     
