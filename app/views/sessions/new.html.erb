@@ -1,4 +1,6 @@
-<%= form_for(:user, :html => {class: "form-horizontal", role: "form"},url: '/auth') do |f| %>
+<h2 class="center">log-in<h2>
+
+<%= form_for(:session, :html => {class: "form-horizontal", role: "form"},url: login_path ) do |f| %>
     <div class="form-group">
        <div class="control-label col-sm-2">
        <%= f.label :email %>
@@ -6,11 +8,14 @@
        <div class="col-sm-8">
          <%= f.email_field :email , class: "form-control", placeholder: "Enter Email", autofocus: true%>
        </div>
+   </div>
 
+   <div class="form-group">
+       <div class="control-label col-sm-2">
        <%= f.label :password %>
        </div>
        <div class="col-sm-8">
-         <%= f.password_field :password, class: "form-control", placeholder: "Enter Password", autofocus: true%>
+         <%= f.password_field :password , class: "form-control", autocomplete: "off" %>
        </div>
    </div>
 
@@ -19,4 +24,4 @@
        <%= f.submit 'Login', class:'btn btn-primary btn-lg'  %>
      </div>
    </div>
- <% end %>
+ <% end %> 
