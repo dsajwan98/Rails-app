@@ -1,11 +1,9 @@
 class SessionsController < ApplicationController
     def new
-      byebug
+      
     end
 
     def create
-        byebug
-
        user = User.find(session[:user_id])
 
        if user && user.authenticate(params[:session][:password])

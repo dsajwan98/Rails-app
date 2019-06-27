@@ -30,7 +30,6 @@ class UsersController < ApplicationController
   
           if @user.save
               session[:user_id]= @user.id
-              byebug
               flash[:success] = "Hey #{@user.username}, welcome"
               redirect_to articles_path
           else
