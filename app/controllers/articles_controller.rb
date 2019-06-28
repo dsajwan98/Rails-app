@@ -15,13 +15,14 @@ class ArticlesController < ApplicationController
 
     def create
         @article=Article.new
+        @article.user_id=session[:user_id]
         @article.name=params[:article][:name]
         @article.description=params[:article][:description]
         if @article.save
             flash[:success]="Article is successfully created"
             redirect_to articles_url       
         else
-            redirect_to :back
+            redirect_to new_user_path
         end
 
     end

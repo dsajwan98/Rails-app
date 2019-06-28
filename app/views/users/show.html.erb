@@ -1,0 +1,23 @@
+<h1> Showing Data about <%=@user.username%></h1>
+<div>
+<table border="1">
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>List of Articles</th>
+  </tr>
+  <tr>
+    <td><%= @user.username%> </td>
+    <td><%= @user.email %> </td>
+    <td><ul>
+
+      <% @user.articles.each do|article| %>
+         <li><%= article.name%><li>
+      <% end %>
+    </ul></td>
+  </tr>
+</table>
+
+<center><%= link_to 'Back' , articles_url%></center>
+
+</div>
